@@ -1,141 +1,113 @@
-# 🚀 Welcome to Z.ai Code Scaffold
+# 大模型面试100问 - 核心知识点梳理
 
-A modern, production-ready web application scaffold powered by cutting-edge technologies, designed to accelerate your development with [Z.ai](https://chat.z.ai)'s AI-powered coding assistance.
+## 📚 项目简介
 
-## ✨ Technology Stack
+本项目是对《大模型面试100问》PDF文档的系统性梳理，涵盖了大模型领域的核心技术知识点，包括模型架构、训练技术、推理优化、强化学习等多个方面。
 
-This scaffold provides a robust foundation built with:
+## 📖 内容概览
 
-### 🎯 Core Framework
-- **⚡ Next.js 16** - The React framework for production with App Router
-- **📘 TypeScript 5** - Type-safe JavaScript for better developer experience
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
+### 一、参数高效微调技术 (PEFT)
+- **LoRA**: 低秩矩阵分解，减少微调参数量
+- **AdaLoRA**: 自适应调整低秩值
+- **QLoRA**: 结合4-bit量化和LoRA
+- **Adapter技术**: 插入小型可训练模块
+- **Prefix-tuning/P-tuning/Prompt-tuning**: 提示学习方法
 
-### 🧩 UI Components & Styling
-- **🧩 shadcn/ui** - High-quality, accessible components built on Radix UI
-- **🎯 Lucide React** - Beautiful & consistent icon library
-- **🌈 Framer Motion** - Production-ready motion library for React
-- **🎨 Next Themes** - Perfect dark mode in 2 lines of code
+### 二、训练优化技术
+- 混合精度训练原理与流程
+- float16/bfloat16/float32的选择
+- 溢出问题的解决方案
 
-### 📋 Forms & Validation
-- **🎣 React Hook Form** - Performant forms with easy validation
-- **✅ Zod** - TypeScript-first schema validation
+### 三、预训练任务
+- CLM（因果语言建模）
+- MLM（掩码语言建模）
+- GLM自回归空白填充
 
-### 🔄 State Management & Data Fetching
-- **🐻 Zustand** - Simple, scalable state management
-- **🔄 TanStack Query** - Powerful data synchronization for React
-- **🌐 Fetch** - Promise-based HTTP request
+### 四、模型架构
+- Transformer核心组件
+- Encoder-only/Decoder-only/Encoder-Decoder对比
+- 为何Decoder-only成为主流
 
-### 🗄️ Database & Backend
-- **🗄️ Prisma** - Next-generation TypeScript ORM
-- **🔐 NextAuth.js** - Complete open-source authentication solution
+### 五、注意力机制优化
+- 多头注意力机制原理
+- Q、K、V的设计意义
+- Scaled Dot-Product原因
+- KV Cache与GQA
 
-### 🎨 Advanced UI Features
-- **📊 TanStack Table** - Headless UI for building tables and datagrids
-- **🖱️ DND Kit** - Modern drag and drop toolkit for React
-- **📊 Recharts** - Redefined chart library built with React and D3
-- **🖼️ Sharp** - High performance image processing
+### 六、位置编码
+- 绝对位置编码 vs RoPE（旋转位置编码）
 
-### 🌍 Internationalization & Utilities
-- **🌍 Next Intl** - Internationalization library for Next.js
-- **📅 Date-fns** - Modern JavaScript date utility library
-- **🪝 ReactUse** - Collection of essential React hooks for modern development
+### 七、归一化与激活函数
+- LayerNorm vs BatchNorm vs RMSNorm
+- ReLU vs SwiGLU
 
-## 🎯 Why This Scaffold?
+### 八、分词技术
+- BPE、WordPiece、BBPE原理对比
 
-- **🏎️ Fast Development** - Pre-configured tooling and best practices
-- **🎨 Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- **🔒 Type Safety** - Full TypeScript configuration with Zod validation
-- **📱 Responsive** - Mobile-first design principles with smooth animations
-- **🗄️ Database Ready** - Prisma ORM configured for rapid backend development
-- **🔐 Auth Included** - NextAuth.js for secure authentication flows
-- **📊 Data Visualization** - Charts, tables, and drag-and-drop functionality
-- **🌍 i18n Ready** - Multi-language support with Next Intl
-- **🚀 Production Ready** - Optimized build and deployment settings
-- **🤖 AI-Friendly** - Structured codebase perfect for AI assistance
+### 九、主流模型架构
+- BERT、LLaMA、Qwen、LLaMA 3.1的特点与创新
 
-## 🚀 Quick Start
+### 十、推理加速技术
+- FlashAttention、vLLM原理
 
-```bash
-# Install dependencies
-bun install
+### 十一、分布式训练
+- ZeRO系列（ZeRO-1/2/3）
+- 数据并行、张量并行、流水线并行
 
-# Start development server
-bun run dev
+### 十二、强化学习
+- PPO、DPO算法原理与对比
 
-# Build for production
-bun run build
+### 十三、MoE（混合专家模型）
+- 核心架构与Dense模型对比
 
-# Start production server
-bun start
-```
+### 十四、代码实现
+- Self-Attention、Multi-Head Attention的PyTorch实现
 
-Open [http://localhost:3000](http://localhost:3000) to see your application running.
+## 🎯 面试重点
 
-## 🤖 Powered by Z.ai
+### 必须掌握的核心概念
+1. **LoRA原理与初始化**
+2. **Transformer架构细节**
+3. **注意力机制(Q/K/V)**
+4. **位置编码(RoPE)**
+5. **归一化技术(LayerNorm/RMSNorm)**
+6. **混合精度训练**
+7. **PPO/DPO算法**
+8. **Self-Attention代码实现**
 
-This scaffold is optimized for use with [Z.ai](https://chat.z.ai) - your AI assistant for:
+### 常见面试题型
+- **原理阐述题**: 解释某技术的核心原理
+- **对比分析题**: 比较不同方法的优缺点
+- **代码实现题**: 手撕核心算法
+- **场景应用题**: 如何选择合适的技术方案
 
-- **💻 Code Generation** - Generate components, pages, and features instantly
-- **🎨 UI Development** - Create beautiful interfaces with AI assistance  
-- **🔧 Bug Fixing** - Identify and resolve issues with intelligent suggestions
-- **📝 Documentation** - Auto-generate comprehensive documentation
-- **🚀 Optimization** - Performance improvements and best practices
+## 📊 知识点统计
 
-Ready to build something amazing? Start chatting with Z.ai at [chat.z.ai](https://chat.z.ai) and experience the future of AI-powered development!
+| 类别 | 问题数量 | 重要程度 |
+|------|----------|----------|
+| 参数高效微调 | 10+ | ⭐⭐⭐⭐⭐ |
+| 模型架构 | 15+ | ⭐⭐⭐⭐⭐ |
+| 训练优化 | 10+ | ⭐⭐⭐⭐ |
+| 推理加速 | 5+ | ⭐⭐⭐⭐ |
+| 强化学习 | 8+ | ⭐⭐⭐⭐ |
+| 代码实现 | 5+ | ⭐⭐⭐⭐⭐ |
 
-## 📁 Project Structure
+## 📝 学习建议
 
-```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
-```
+1. **理论基础**: 深入理解每个技术的数学原理
+2. **代码实践**: 动手实现核心算法
+3. **对比分析**: 建立知识体系，理解技术演进
+4. **实际应用**: 了解各技术的适用场景
 
-## 🎨 Available Features & Components
+## 🔗 相关资源
 
-This scaffold includes a comprehensive set of modern web development tools:
+- [原始PDF文档](./upload/)
+- [详细梳理文档](./大模型面试100问_文档梳理.md)
 
-### 🧩 UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
+## 📄 许可证
 
-### 📊 Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
-
-### 🎨 Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
-
-### 🔐 Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Fetch + TanStack Query
-- **State Management**: Simple and scalable with Zustand
-
-### 🌍 Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
-
-## 🤝 Get Started with Z.ai
-
-1. **Clone this scaffold** to jumpstart your project
-2. **Visit [chat.z.ai](https://chat.z.ai)** to access your AI coding assistant
-3. **Start building** with intelligent code generation and assistance
-4. **Deploy with confidence** using the production-ready setup
+本项目仅供学习交流使用。
 
 ---
 
-Built with ❤️ for the developer community. Supercharged by [Z.ai](https://chat.z.ai) 🚀
+**⭐ 如果这个项目对您有帮助，欢迎Star支持！**
